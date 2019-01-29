@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
@@ -10,6 +11,10 @@ class App extends React.Component {
     fishes: {},
     order: {}
   };
+
+  static propTypes = {
+    match: PropTypes.object
+  }
   addFish = fish => {
     // 1. Take a copy of the existing state
     const fishes = { ...this.state.fishes };
